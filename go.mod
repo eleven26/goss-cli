@@ -7,6 +7,7 @@ require (
 	github.com/eleven26/go-filesystem v1.0.0
 	github.com/eleven26/goss v1.0.1
 	github.com/fatih/color v1.13.0
+	github.com/schollz/progressbar/v3 v3.9.0
 	github.com/spf13/cobra v1.5.0
 )
 
@@ -29,7 +30,6 @@ require (
 	github.com/pelletier/go-toml/v2 v2.0.3 // indirect
 	github.com/qiniu/go-sdk/v7 v7.13.0 // indirect
 	github.com/rivo/uniseg v0.3.4 // indirect
-	github.com/schollz/progressbar/v3 v3.9.0 // indirect
 	github.com/spf13/afero v1.9.2 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect

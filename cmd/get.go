@@ -2,10 +2,13 @@ package cmd
 
 import (
 	"fmt"
+	"io"
 	"log"
+	"os"
 	"path/filepath"
 
 	"github.com/fatih/color"
+	"github.com/schollz/progressbar/v3"
 	"github.com/spf13/cobra"
 )
 
@@ -45,6 +48,42 @@ var getCmd = &cobra.Command{
 		if err != nil {
 			log.Fatal(err)
 		}
+
+		key := getCmdArgs.Key
+		localPath := getCmdArgs.Target
+
+		rc, err := app.Storage.Get(getCmdArgs.Key)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		defer func() {
+			err = rc.Close()
+			if err != nil {
+				log.Fatal(err)
+			}
+		}()
+
+		// 获取文件长度
+		length, err := app.Storage.Size(key)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		// 保存到文件 localPath
+		f, _ := os.OpenFile(localPath, os.O_CREATE|os.O_WRONLY, 0o644)
+		defer func(f *os.File) {
+			err = f.Close()
+			if err != nil {
+				log.Fatal(err)
+			}
+		}(f)
+
+		// 初始化进度条
+		bar := progressbar.DefaultBytes(length, fmt.Sprintf("\"%s\" -> \"%s\"", key, localPath))
+
+		// io.MultiWriter 同时输出到文件和进度条
+		_, err = io.Copy(io.MultiWriter(f, bar), rc)
 
 		color.Green(fmt.Sprintf("下载成功！保存路径：\"%s\"", getCmdArgs.Target))
 	},
