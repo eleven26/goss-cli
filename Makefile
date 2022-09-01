@@ -14,6 +14,10 @@ format:
 	go mod tidy
 	bin/gofumpt -w $(FILES)
 
+.PHONY: release
+release:
+	goreleaser release --snapshot --rm-dist
+
 .PHONY: all
 all:
 	make check
