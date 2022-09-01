@@ -59,8 +59,6 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/eleven26/go-filesystem v1.0.0 h1:35ZBKKq0w4dr9/ynSWImmZnbMGtotqIfGAQN33fAv1k=
 github.com/eleven26/go-filesystem v1.0.0/go.mod h1:/dRZvaQom/ea0U+FVFPgtRheBNmuprv8QLBZVyQEt7E=
-github.com/eleven26/goss v1.1.1 h1:Fh4mlMXdZpMFdQo+TKdq7PY7F948oviptc4KDZ847XI=
-github.com/eleven26/goss v1.1.1/go.mod h1:BwROR2F1vbCrHDqnGc5jM0TclEF5WP5UVbaGwMxLnI4=
 github.com/eleven26/goss v1.1.2 h1:A0PytZTZ7KFVRiuXI51aNvbZp0wBntEXY+lPvZoj5vw=
 github.com/eleven26/goss v1.1.2/go.mod h1:BwROR2F1vbCrHDqnGc5jM0TclEF5WP5UVbaGwMxLnI4=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=

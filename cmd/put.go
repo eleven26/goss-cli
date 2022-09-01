@@ -1,8 +1,14 @@
 package cmd
 
 import (
+	"bufio"
 	"fmt"
+	"io"
 	"log"
+	"os"
+	"path/filepath"
+
+	"github.com/schollz/progressbar/v3"
 
 	fs "github.com/eleven26/go-filesystem"
 	"github.com/fatih/color"
@@ -15,10 +21,18 @@ type PutCmdArgs struct {
 	Force bool
 }
 
+func filename(path string) string {
+	if filepath.Dir(path) == "." {
+		return path
+	}
+
+	return filepath.Base(path)
+}
+
 func parsePutCmdArgs(cmd *cobra.Command, args []string) PutCmdArgs {
 	key, _ := cmd.Flags().GetString("key")
 	if key == "" {
-		key = args[0]
+		key = filename(args[0])
 	}
 
 	force, _ := cmd.Flags().GetBool("force")
@@ -30,6 +44,24 @@ func parsePutCmdArgs(cmd *cobra.Command, args []string) PutCmdArgs {
 		Path:  path,
 		Force: force,
 	}
+}
+
+func NewReaderWithProgress(path string) io.Reader {
+	file, err := os.Open(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	size, err := fs.Size(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	bar := progressbar.New64(size)
+
+	r := progressbar.NewReader(bufio.NewReader(file), bar)
+
+	return &r
 }
 
 var putExamples = Examples(`
@@ -58,7 +90,8 @@ var putCmd = &cobra.Command{
 			log.Fatalf("文件已存在，需要覆盖请使用 -f 参数强制覆盖原有文件")
 		}
 
-		err = app.Storage.PutFromFile(putCmdArgs.Key, putCmdArgs.Path)
+		// err = app.Storage.PutFromFile(putCmdArgs.Key, putCmdArgs.Path)
+		err = app.Storage.Put(putCmdArgs.Key, NewReaderWithProgress(putCmdArgs.Path))
 		if err != nil {
 			log.Fatal(err)
 		}
