@@ -6,7 +6,7 @@ import (
 	"github.com/eleven26/goss/goss"
 )
 
-var app goss.Goss
+var app *goss.Goss
 
 func Run() {
 	var err error

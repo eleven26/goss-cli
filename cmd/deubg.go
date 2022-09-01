@@ -30,7 +30,7 @@ var debugCmd = &cobra.Command{
 		}
 
 		methodName := title(args[0])
-		ref := reflect.ValueOf(app.Storage.Storage())
+		ref := reflect.ValueOf(app.Storage)
 		method := ref.MethodByName(methodName)
 		if !method.IsValid() {
 			color.Red(fmt.Sprintf("%s 不存在方法 %s\n", clientName(), methodName))
@@ -46,7 +46,7 @@ var debugCmd = &cobra.Command{
 }
 
 func clientName() string {
-	return reflect.TypeOf(app.Storage.Storage()).Elem().String()
+	return reflect.TypeOf(app.Storage).Elem().String()
 }
 
 func title(name string) string {
