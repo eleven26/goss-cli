@@ -11,7 +11,6 @@ import (
 	"github.com/schollz/progressbar/v3"
 
 	fs "github.com/eleven26/go-filesystem"
-	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )
 
@@ -46,7 +45,7 @@ func parsePutCmdArgs(cmd *cobra.Command, args []string) PutCmdArgs {
 	}
 }
 
-func NewReaderWithProgress(path string) io.Reader {
+func NewReaderWithProgress(path string, description string) io.Reader {
 	file, err := os.Open(path)
 	if err != nil {
 		log.Fatal(err)
@@ -57,7 +56,7 @@ func NewReaderWithProgress(path string) io.Reader {
 		log.Fatal(err)
 	}
 
-	bar := progressbar.New64(size)
+	bar := progressbar.DefaultBytes(size, description)
 
 	r := progressbar.NewReader(bufio.NewReader(file), bar)
 
@@ -91,12 +90,13 @@ var putCmd = &cobra.Command{
 		}
 
 		// err = app.Storage.PutFromFile(putCmdArgs.Key, putCmdArgs.Path)
-		err = app.Storage.Put(putCmdArgs.Key, NewReaderWithProgress(putCmdArgs.Path))
+		r := NewReaderWithProgress(putCmdArgs.Path, fmt.Sprintf("\"%s\" -> \"%s\"", putCmdArgs.Path, putCmdArgs.Key))
+		err = app.Storage.Put(putCmdArgs.Key, r)
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		color.Green(fmt.Sprintf("上传成功！\"%s\" -> \"%s\"", putCmdArgs.Path, putCmdArgs.Key))
+		// color.Green(fmt.Sprintf("上传成功！\"%s\" -> \"%s\"", putCmdArgs.Path, putCmdArgs.Key))
 	},
 }
 
