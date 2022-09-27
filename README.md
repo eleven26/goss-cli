@@ -69,6 +69,7 @@ Available Commands:
   completion  Generate the autocompletion script for the specified shell
   debug       调试命令
   get         获取指定文件
+  delete      删除指定文件
   help        Help about any command
   list        列出指定目录下的文件
   put         上传文件
@@ -104,4 +105,10 @@ goss-cli put /path/to/xx.txt
 
 ```shell
 goss-cli put /path/to/xx.txt --key=new_key.txt
+```
+
+5. 删除文件
+
+```shell
+goss-cli delete xx.txt
 ```
