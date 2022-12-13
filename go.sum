@@ -63,8 +63,8 @@ github.com/dustin/go-humanize v1.0.0 h1:VSnTsYCnlFHaM2/igO1h6X3HA71jcobQuxemgkq4
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/eleven26/go-filesystem v1.0.0 h1:35ZBKKq0w4dr9/ynSWImmZnbMGtotqIfGAQN33fAv1k=
 github.com/eleven26/go-filesystem v1.0.0/go.mod h1:/dRZvaQom/ea0U+FVFPgtRheBNmuprv8QLBZVyQEt7E=
-github.com/eleven26/goss v1.6.1 h1:3zuhgg+VexwoOSztWB5Sjy28FnjHMLHEgxhrF8MlmPE=
-github.com/eleven26/goss v1.6.1/go.mod h1:DSYRwmFL5C24cZCcC1KPjI9x037TZkmuLgCqdiKOJMw=
+github.com/eleven26/goss v1.6.2 h1:sQY3aNJrNLuTIAH3pRAWUGLZ+kW7vrOyNsiGbfaj9wQ=
+github.com/eleven26/goss v1.6.2/go.mod h1:S+f6oA5M+LuZvUS2/sX8K5rAM1BI7LzreBT8cPqf7Vs=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.4/go.mod h1:6rpuAdCZL397s3pYoYcLgu1mIlRU8Am5FuJP05cCM98=

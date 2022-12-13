@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/eleven26/go-filesystem v1.0.0
-	github.com/eleven26/goss v1.6.1
+	github.com/eleven26/goss v1.6.2
 	github.com/fatih/color v1.13.0
 	github.com/schollz/progressbar/v3 v3.9.0
 	github.com/spf13/cobra v1.5.0
