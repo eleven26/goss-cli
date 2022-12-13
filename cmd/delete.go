@@ -2,9 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"log"
+
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
-	"log"
 )
 
 type DeleteCmdArgs struct {
