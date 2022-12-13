@@ -20,3 +20,17 @@ qiniu:
   secret_key:
   domain:
   private:
+
+s3:
+  endpoint:
+  region:
+  bucket:
+  access_key:
+  secret_key:
+
+minio:
+  endpoint:
+  bucket:
+  access_key:
+  secret_key:
+  use_ssl:

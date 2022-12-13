@@ -17,7 +17,7 @@ go install github.com/eleven26/goss-cli@latest
 2. 参考配置文件：
 
 * `driver`: 指明使用哪个云存储提供商的对象存储服务。
-* `aliyun`、`tencent`、`qiniu`、`huawei` 等为不同厂商对象存储的配置。
+* `aliyun`、`tencent`、`qiniu`、`huawei`、`s3`、`minio` 等为不同厂商对象存储的配置。
 
 ```yaml
 # 云存储类型
@@ -49,6 +49,20 @@ huawei:
   bucket:
   access_key:
   secret_key:
+
+s3:
+  endpoint:
+  region:
+  bucket:
+  access_key:
+  secret_key:
+
+minio:
+  endpoint:
+  bucket:
+  access_key:
+  secret_key:
+  use_ssl:
 ```
 
 ## 使用
