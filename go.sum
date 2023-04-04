@@ -63,8 +63,8 @@ github.com/dustin/go-humanize v1.0.0 h1:VSnTsYCnlFHaM2/igO1h6X3HA71jcobQuxemgkq4
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/eleven26/go-filesystem v1.0.0 h1:35ZBKKq0w4dr9/ynSWImmZnbMGtotqIfGAQN33fAv1k=
 github.com/eleven26/go-filesystem v1.0.0/go.mod h1:/dRZvaQom/ea0U+FVFPgtRheBNmuprv8QLBZVyQEt7E=
-github.com/eleven26/goss v1.6.2 h1:sQY3aNJrNLuTIAH3pRAWUGLZ+kW7vrOyNsiGbfaj9wQ=
-github.com/eleven26/goss v1.6.2/go.mod h1:S+f6oA5M+LuZvUS2/sX8K5rAM1BI7LzreBT8cPqf7Vs=
+github.com/eleven26/goss/v2 v2.1.0 h1:gQD/pU3aLyILioGBOakKg83i18VgDAOcqNtDdDRGlHc=
+github.com/eleven26/goss/v2 v2.1.0/go.mod h1:0h2kVO2MH1vcv4wulyYuoGhHcTnEnFaLik1PCQsRiKc=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.4/go.mod h1:6rpuAdCZL397s3pYoYcLgu1mIlRU8Am5FuJP05cCM98=
@@ -232,8 +232,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/qiniu/dyn v1.3.0/go.mod h1:E8oERcm8TtwJiZvkQPbcAh0RL8jO1G0VXJMW3FAWdkk=
-github.com/qiniu/go-sdk/v7 v7.13.0 h1:0bWRh/oAC2cArUILZLuWN+s9hPep1JYch5sA2Mfxq7A=
-github.com/qiniu/go-sdk/v7 v7.13.0/go.mod h1:btsaOc8CA3hdVloULfFdDgDc+g4f3TDZEFsDY0BLE+w=
+github.com/qiniu/go-sdk/v7 v7.14.0 h1:6icihMTKHoKMmeU1mqtIoHUv7c1LrLjYm8wTQaYDqmw=
+github.com/qiniu/go-sdk/v7 v7.14.0/go.mod h1:btsaOc8CA3hdVloULfFdDgDc+g4f3TDZEFsDY0BLE+w=
 github.com/qiniu/x v1.10.5/go.mod h1:03Ni9tj+N2h2aKnAz+6N0Xfl8FwMEDRC2PAlxekASDs=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
 github.com/rivo/uniseg v0.3.4 h1:3Z3Eu6FGHZWSfNKJTOUiPatWwfc7DzJRU04jFUqJODw=

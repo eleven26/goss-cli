@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 
-	"github.com/eleven26/goss/goss"
+	"github.com/eleven26/goss/v2/goss"
 )
 
 var app *goss.Goss

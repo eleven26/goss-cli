@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/eleven26/goss/utils"
+	"github.com/eleven26/goss/v2/utils"
 	"github.com/spf13/cobra"
 )
 
