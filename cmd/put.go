@@ -80,7 +80,7 @@ var putCmd = &cobra.Command{
 			log.Fatalf("文件不存在：%s\n", putCmdArgs.Path)
 		}
 
-		exist, err := app.Storage.Exists(putCmdArgs.Key)
+		exist, err := app.Exists(putCmdArgs.Key)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -91,7 +91,7 @@ var putCmd = &cobra.Command{
 
 		// err = app.Storage.PutFromFile(putCmdArgs.Key, putCmdArgs.Path)
 		r := NewReaderWithProgress(putCmdArgs.Path, fmt.Sprintf("\"%s\" -> \"%s\"", putCmdArgs.Path, putCmdArgs.Key))
-		err = app.Storage.Put(putCmdArgs.Key, r)
+		err = app.Put(putCmdArgs.Key, r)
 		if err != nil {
 			log.Fatal(err)
 		}

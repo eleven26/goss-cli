@@ -12,6 +12,5 @@ func init() {
 	rootCmd.AddCommand(putCmd)
 	rootCmd.AddCommand(getCmd)
 	rootCmd.AddCommand(listCmd)
-	rootCmd.AddCommand(debugCmd)
 	rootCmd.AddCommand(deleteCmd)
 }

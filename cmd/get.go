@@ -44,7 +44,7 @@ var getCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		getCmdArgs := parseGetCmdArgs(cmd, args)
 
-		err := app.Storage.GetToFile(getCmdArgs.Key, getCmdArgs.Target)
+		err := app.GetToFile(getCmdArgs.Key, getCmdArgs.Target)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -52,7 +52,7 @@ var getCmd = &cobra.Command{
 		key := getCmdArgs.Key
 		localPath := getCmdArgs.Target
 
-		rc, err := app.Storage.Get(getCmdArgs.Key)
+		rc, err := app.Get(getCmdArgs.Key)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -65,7 +65,7 @@ var getCmd = &cobra.Command{
 		}()
 
 		// 获取文件长度
-		length, err := app.Storage.Size(key)
+		length, err := app.Size(key)
 		if err != nil {
 			log.Fatal(err)
 		}

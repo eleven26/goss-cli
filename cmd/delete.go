@@ -33,7 +33,7 @@ var deleteCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		deleteCmdArgs := parseDeleteCmdArgs(args)
 
-		exists, err := app.Storage.Exists(deleteCmdArgs.Key)
+		exists, err := app.Exists(deleteCmdArgs.Key)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -42,7 +42,7 @@ var deleteCmd = &cobra.Command{
 			return
 		}
 
-		err = app.Storage.Delete(deleteCmdArgs.Key)
+		err = app.Delete(deleteCmdArgs.Key)
 		if err != nil {
 			log.Fatal(err)
 		}

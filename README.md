@@ -1,6 +1,6 @@
 # goss-cli
 
-上传下载对象存储文件的命令行工具，支持阿里云、腾讯云、华为云、七牛云。
+上传下载对象存储文件的命令行工具，兼容 amazon s3 协议，支持但不限于阿里云、腾讯云、华为云、七牛云、amazon s3、minio。
 
 ## 安装
 
@@ -12,57 +12,14 @@ go install github.com/eleven26/goss-cli@latest
 
 ## 配置
 
-1. 配置文件路径为：`~/.goss.yml`，`goss-cli` 执行的时候会去读取 `~/.goss.yml`，因此需要保证该文件为有效配置文件。
+需要添加以下环境变量：
 
-2. 参考配置文件：
-
-* `driver`: 指明使用哪个云存储提供商的对象存储服务。
-* `aliyun`、`tencent`、`qiniu`、`huawei`、`s3`、`minio` 等为不同厂商对象存储的配置。
-
-```yaml
-# 云存储类型
-driver: aliyun
-
-aliyun:
-  # oss 的链接，不同区域不同
-  endpoint:
-  # bucket
-  bucket:
-  access_key_id:
-  access_key_secret:
-
-tencent:
-  url:
-  secret_id:
-  secret_key:
-
-qiniu:
-  bucket:
-  access_key:
-  secret_key:
-  domain:
-  private:
-
-huawei:
-  endpoint:
-  location:
-  bucket:
-  access_key:
-  secret_key:
-
-s3:
-  endpoint:
-  region:
-  bucket:
-  access_key:
-  secret_key:
-
-minio:
-  endpoint:
-  bucket:
-  access_key:
-  secret_key:
-  use_ssl:
+```shell
+export GOSS_ENDPOINT=oss-cn-hangzhou.aliyuncs.com
+export GOSS_ACCESS_KEY=xxx
+export GOSS_SECRET_KEY=xxx
+export GOSS_REGION=oss-cn-hangzhou
+export GOSS_BUCKET=xxx
 ```
 
 ## 使用
@@ -81,7 +38,6 @@ Usage:
 
 Available Commands:
   completion  Generate the autocompletion script for the specified shell
-  debug       调试命令
   get         获取指定文件
   delete      删除指定文件
   help        Help about any command
